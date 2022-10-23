@@ -1,0 +1,8 @@
+@media only screen and (max-width: 1024px) {
+    .menus .col-lg-6 {
+        display: none;
+    }
+    .menus {
+        padding: 15px 0;
+    }
+}

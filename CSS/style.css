@@ -1,0 +1,908 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* modifying Default HTML element Properties */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+/* ul li a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #1089ff;
+} */
+
+a,
+a:visited,
+a:link,
+a:focus {
+    font-size: 1.6rem;
+    text-decoration: none;
+    /* color: inherit; */
+}
+
+
+/* body a,
+body a:hover {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+} */
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+}
+
+
+/* Utility Classes */
+
+.lg-heading {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.md-heading {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.tab-active {
+    border-bottom: 2px solid #1089ff;
+}
+
+.main-btn {
+    background-color: #202029;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.section-wrapper {
+    padding: 10rem 0;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.color-orange {
+    color: #ff964c;
+}
+
+.color-red {
+    color: #f3786b;
+}
+
+.bg-red {
+    background-color: #f3796b57;
+}
+
+.color-yellow {
+    color: #ffd95f;
+}
+
+.color-blue {
+    color: #1089ff;
+}
+
+.bg-blue {
+    background-color: #1088ff63;
+}
+
+.color-green {
+    color: #00af91;
+}
+
+.bg-green {
+    background-color: #00af925d;
+}
+
+
+/* menu Styling */
+
+.menus {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-items .nav-item {
+    padding: 2.5rem 0;
+}
+
+.nav-item a {
+    color: #202029;
+}
+
+.nav-items .dropdown button {
+    font-size: 1.6rem;
+    border: none;
+}
+
+.nav-items .dropdown button:hover {
+    outline: none;
+}
+
+.nav-items .nav-item.active {
+    border-bottom: 2px solid #1089ff;
+}
+
+.nav-items .nav-item .active a {
+    color: #1089ff;
+}
+
+.menu-right button {
+    font-size: 1.6rem;
+}
+
+.search button,
+.cart button,
+.sign-up button {
+    background-color: #fff;
+    border: none;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart .power {
+    position: absolute;
+    background-color: #1089ff;
+    color: #fff;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    top: -10px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.user-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Mobile-menu styling starts here */
+
+.hamburger-menu {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.hamburger-menu input[type="checkbox"] {
+    height: 32px;
+    width: 40px;
+    position: absolute;
+    top: -17px;
+    left: 17px;
+    z-index: 5;
+    opacity: 0;
+}
+
+.hamburger-menu .hamburger-lines {
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -17px;
+    left: 17px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-menu .hamburger-menu-items {
+    display: none;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    top: 42px;
+    right: -118px;
+    color: #000;
+    background-color: #07c5a5c9;
+    padding: 0 30px 15px;
+    width: 300px;
+    direction: rtl;
+    /* writing-mode: horizontal-tb; */
+}
+
+.hamburger-menu .hamburger-menu-items li a {
+    color: #000;
+    display: inline-block;
+    padding: 15px 0;
+}
+
+.hamburger-menu .hamburger-lines .line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.hamburger-menu input[type="checkbox"]:checked~.hamburger-menu-items {
+    display: block;
+    transform: translate(0%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-menu input[type="checkbox"]:checked~.hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-menu input[type="checkbox"]:checked~.hamburger-lines .line2 {
+    display: none;
+}
+
+.hamburger-menu input[type="checkbox"]:checked~.hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+/* banner styling  */
+
+.banner {
+    width: 100%;
+    background: url(../images/background/banner.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 50rem;
+}
+
+form .main-input {
+    width: 40rem;
+    position: relative;
+}
+
+.main-input .search {
+    position: absolute;
+    font-size: 2.2rem;
+    /* opacity: 0.8; */
+    top: 28%;
+    left: 2rem;
+    transform: translateX(-45%);
+}
+
+form .main-input input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+form button.btn {
+    padding: 1.2rem 2rem;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.banner .feature-img {
+    width: 75%;
+}
+
+.banner .feature-img img {
+    padding-top: 10rem;
+    width: 100%;
+    padding-bottom: 10rem;
+    /* height: auto; */
+}
+
+
+/* Courses with top category */
+
+.course-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.courses {
+    display: flex;
+    justify-content: space-around;
+    padding: 5rem 0;
+}
+
+.course {
+    width: 19%;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.course .course-icon {
+    /* padding: 1rem; */
+    height: 8rem;
+    width: 8rem;
+    border-radius: 4rem;
+    font-size: 5rem;
+    border: 1px solid #ddd;
+    color: #00af91;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.course a {
+    color: #202029;
+}
+
+.browse-btn .btn {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.slider-btns {
+    font-size: 1.6rem;
+}
+
+.slider-btns .left,
+.slider-btns .right {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-btns button {
+    background: inherit;
+    border: none;
+}
+
+.slider-btns .left {
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.slider-btns .right {
+    position: absolute;
+    top: 50%;
+    right: 5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+/* popular Courses Section starts here */
+
+.popular-course-wrapper {
+    padding: 5rem 0;
+    background-color: #f5f5f8;
+}
+
+.popular-section-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tab-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab-item a {
+    color: #202029;
+}
+
+.popular-course-list {
+    padding: 3rem 0;
+}
+
+.popular-course {
+    background-color: #fff;
+    margin-bottom: 3rem;
+}
+
+.popular-course a {
+    color: #202029;
+}
+
+.popular-course .course-image {
+    overflow: hidden;
+}
+
+.popular-course .course-image img:hover {
+    transform: scale(1.1);
+    transition: all 1s linear;
+}
+
+.popular-course-text {
+    padding: 1.5rem;
+}
+
+.course-content .author .author-image {
+    width: 5rem;
+}
+
+.course-content .author .author-image img {
+    width: 100%;
+    border-radius: 5rem;
+    height: 5rem;
+}
+
+.popular-course-list span {
+    font-size: 1.6rem;
+}
+
+.pricing del {
+    font-size: 1.6rem;
+    color: #999;
+}
+
+.course-details {
+    font-size: 1.6rem;
+}
+
+
+/*  why EduGuard starts here Styling starts here*/
+
+.features-wrapper {
+    background-color: #f1f1f6;
+    padding: 5rem 0;
+}
+
+.online-courses {
+    background-color: #fff;
+    padding: 0 2rem;
+    border-radius: 0.5rem;
+}
+
+.online-courses a {
+    color: #202029;
+}
+
+.online-courses i {
+    /* background-color: #00af923d; */
+    padding: 1.5rem;
+}
+
+.online-courses p {
+    color: #9897a7;
+}
+
+
+/* steps */
+
+.steps-wrapper {
+    padding: 10rem 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.steps-wrapper p {
+    color: #9897a7;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10rem;
+    margin-bottom: 1rem;
+}
+
+.step-icon {
+    text-align: center;
+    width: 10rem;
+    border-radius: 5rem;
+    padding: 1rem 1rem;
+}
+
+.step-icon span {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.step-feature-image .background {
+    position: absolute;
+    bottom: -2rem;
+    left: 70%;
+}
+
+.step-feature-image .main-image {
+    position: absolute;
+}
+
+.step-feature-image .main-image img {
+    width: 85%;
+}
+
+.step-feature-image .top-image {
+    position: absolute;
+    top: 5rem;
+    left: 65%;
+}
+
+
+/* Testimonials */
+
+.testimonial-wrapper {
+    padding: 10rem 0;
+    background-color: #f3f3f7;
+}
+
+.testimonial-wrapper p {
+    color: #9897a7;
+}
+
+.saying {
+    position: relative;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    /* position: relative; */
+}
+
+.testimonial .student-profile {
+    width: 6rem;
+}
+
+.testimonial .student-profile img {
+    width: 100%;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.left-right-btns .left button,
+.left-right-btns .right button {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.testimonial-wrapper .left-right-btns .left {
+    position: absolute;
+    top: 30%;
+    left: -60px;
+}
+
+.testimonial-wrapper .left-right-btns .right {
+    position: absolute;
+    right: -60px;
+    /* background: #fff; */
+    top: 30%;
+}
+
+.testimonial-wrapper button {
+    background-color: inherit;
+    border: none;
+    font-size: 2rem;
+}
+
+
+/* client Wrapper */
+
+.client-wrapper {
+    padding: 10rem 0 0 0;
+}
+
+
+/* instructor section */
+
+.instructors {
+    position: relative;
+}
+
+.instructor {
+    border: 1px solid rgba(221, 221, 221, 0.801);
+}
+
+.instructor h1 {
+    font-weight: 700;
+}
+
+.instructor a {
+    color: #202029;
+}
+
+.instructor p {
+    color: #9897a7;
+}
+
+.section-wrapper button {
+    background-color: inherit;
+    border: none;
+    font-size: 2rem;
+}
+
+.section-wrapper .left-right-btns .left {
+    position: absolute;
+    top: 35%;
+    left: -60px;
+}
+
+.section-wrapper .left-right-btns .right {
+    position: absolute;
+    top: 35%;
+    right: -60px;
+}
+
+
+/* blog */
+
+.blog-wrapper {
+    padding: 10rem 0;
+    background-color: #f5f5f8;
+}
+
+.blogs {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.blogs .blog {
+    background-color: #fff;
+}
+
+.blogs .blog-feature-image {
+    overflow: hidden;
+}
+
+.blog a {
+    color: #202029;
+}
+
+.author span,
+.author i {
+    font-size: 1.6rem;
+}
+
+.blogs .blog:hover {
+    transform: scale(1.05);
+    transition: all 1s ease-in-out;
+}
+
+.blog-wrapper button {
+    background-color: inherit;
+    border: none;
+    font-size: 2rem;
+}
+
+.blog-wrapper .left-right-btns .left {
+    position: absolute;
+    top: 35%;
+    left: -60px;
+}
+
+.blog-wrapper .left-right-btns .right {
+    position: absolute;
+    top: 35%;
+    right: -60px;
+}
+
+
+/* join */
+
+.join-wrapper {
+    background-color: #ebebf2;
+    padding: 10rem 0 20rem;
+    text-align: center;
+}
+
+.join-wrapper .item {
+    background-color: #f7f7fa;
+    position: relative;
+    padding: 10rem 1rem 3rem;
+    border-radius: 1rem;
+}
+
+.join-wrapper .item .item-image {
+    position: absolute;
+    width: 30%;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.join-wrapper .item .item-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.join-wrapper .item p {
+    color: #9897a7;
+}
+
+.item .browse-btn a {
+    display: inline-block;
+    background-color: #00af91;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+/* footer */
+
+.footer-wrapper {
+    padding: 15rem 0 0 0;
+    background-color: #25252e;
+    position: relative;
+}
+
+.subscribe {
+    padding: 3rem 0;
+    background-color: #fff;
+    width: 50%;
+    /* margin: 0 auto; */
+    border-radius: 1rem;
+    position: absolute;
+    top: -30%;
+    left: 25%;
+}
+
+.subscribe p {
+    color: #202029;
+}
+
+.subscribe .mail-area {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.subscribe .mail-area input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 1rem 0 0 1rem;
+    font-size: 1.6rem;
+    padding: 1rem;
+    outline: none;
+}
+
+.subscribe button {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+
+/* main footer section starts here */
+
+.main-footer h1 {
+    color: #fff;
+}
+
+.main-footer p {
+    color: #ddd;
+}
+
+.socials i {
+    color: #fff;
+    font-size: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.footer-wrapper a {
+    color: #ddd;
+}
+
+.footer2 ul {
+    margin-left: -2rem;
+}
+
+.divider {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.606);
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.copyright {
+    color: #f7f7f7;
+}
+
+.top {
+    text-align: right;
+}
+
+.footer-wrapper span,
+.footer-wrapper i {
+    color: #ddd;
+    font-size: 1.6rem;
+}
+
+.top button {
+    background: none;
+    border: none;
+}
+
+
+/* branches */
+
+.branch-wrapper {
+    padding: 50px 0;
+}
+
+.branch-wrapper .branch {
+    padding: 50px 70px;
+    border: 1px solid #f7f7f7;
+    border-radius: 15px;
+}
+
+.branch-wrapper .branch a {
+    color: #000;
+    padding-left: 15px;
+}
+
+.branch-wrapper .branch p {
+    padding: 15px 0 15px 15px;
+    margin: 0;
+}
